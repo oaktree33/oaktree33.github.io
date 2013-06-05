@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<title>Robartics</title>
+	<head>
+		<link rel="stylesheet" href="css/robartics.css">
+		
+	</head>
+	<body>
+		<h1>Robartics Project</h1>
+		<h3>Objective:</h3>
+		<p>
+			The goal of this project was to collect and obtain a biopotential signal, and use it accomplish a meaningful task using the given robotic arm.<br>
+			Our team chose to use the Electroocculagraphic potentials to draw with the robot arm.
+		</p>
+		<h3>Project Contraints:</h3>
+		<p>
+			<ul>
+				<li>Allowed to make use of only one biopotential signal</li>
+				<li>Must use the given lynx robot arm (http://www.lynxmotion.com/c-126-al5b.aspx)</li>
+				<li>Only the end effector of the given robot arm can be modified.</li>
+				<li>
+					Material Constraints:
+					<ul>
+						<li>
+							Acrylic Sheets (with laser cutter).
+						</li>
+						<li>
+							Acrylonitrile butadiene styrene (with FDM).
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</p>
+		<h3>Project Progression:</h3>
+		<p>
+			The project was first divided into three major modules:
+			<ul>
+				<li>End effector</li>
+				<li>Amplifier and filters</li>
+				<li>Microcontroller programming</li>
+			</ul>
+			Individuals in our group was given charge over each of the modules above. However, all members of the team were aware of the progress and the technical details of each module. 
+		</p>
+		<h4>End Effector</h4>
+		<p>
+			For our purpose of drawing, our end effector needed to be able to hold a drawing utensil. For our prototype it was a pen. Due to our future plan to implement a way for the arm to automatically switch out writing utensils, we designed the end effector so that it takes advantage of the original claw mechanism of the robot arm. <br>
+			Below are images of the end effector assembly before the attachement to the robot arm:
+		</p>
+		<img class="robarticsImg" src="img/robarticsEndEffector1.jpg"/>
+		<img class="robarticsImg" src="img/robarticsEndEffector2.jpg"/>
+		<p>
+			Each piece of the end effector is attached to each side of the arm's claw so that when the claw closes, the two halves of the tubing will close, provding grip for the pen.<br>
+			The pieces gets attached to the claw through the use of two screws and the screw sockets already present on the claws.
+		</p>
+		<h4>Amplifier and filters</h4>
+		<p>
+			We were provided an EKG for this project. However, we soon discovered that the provided EKG was a differentiated differential amplifier, which did not fit our overall desired design.<br>
+			The overall concept can be described as follows:
+			<ul>
+				<li>The canvas's center is placed at the user's eye-level</li>
+				<li>The user keeps his eye focused at the tip of the drawing utensil as normal drawer would.</li>
+				<li>The user tilts head up to draw upwards, down to draw downards, left to draw left, right to draw right. All the while the eyes are focused on the tip of the utensil.</li>
+				<ul>
+					<li>This results in the eyes rotating (in respect of the user's face) causing change in potential across the eye.</li>
+					<li>This potential values will be filtered, amplified, then sent to the microcontroller in order to determine whether looking up(left) or down(right) using simple threshold testing. </li>
+				</ul>
+			</ul>
+			Above mentioned concept requires the "raw-potentials" of the eye, which the provided EKG did not provide. The EKG provided the amplification of the change in amplitude of the potential. In other words, it differentiated the "raw-potential signal" <br> 
+			Furthermore, the EKG provided very low signal for "looking down" in relative to the signal acquired for "looking up". The amplitude of the "looking down" signal was so small that it was often impossible to detect "looking down" eye-motion of the user. <br>
+			Due to all these reasons, we decided to build our own instrumental amplifier using the INA125.<br>
+			Below is a simple flow chart that summarizes the Amplifier and Filter circuitry:
+		</p>
+		<img class = "robarticsImg" src="img/robarticsCircuitFlowChart.png">
+		<p>
+			The potentiometer was used to adjust gain of every stage of the circuit, due to the simple fact that each time the electrodes are reattached, the signal shifts in great ranges, especially the DC offset.<br>
+		</p>
+		<h4>Microcontroller Programming</h4>
+		<p>
+			Major Contraints:
+			<ul>
+				<li>The ADC of the microcontroller ranges only from 0-5V.</li>
+				<li>The robot arm's lynx board takes in string commands sent through RS232 serial communication protocol.</li>
+				<li>Must translate 2 dimensional movement on the canvas into joint angle positions of the arms.</li>
+			</ul>
+			The first contraint was addressed by summing variable DC offset withtin the amplifier circuitry.<br>
+			The second contraint was sddressed by selectring a microcontroller that already contained RS232 protocol ability. The microcontroller chip that we chose provided two TX pins (serial transmission pin), which allowed us to send messages to the robot arm board and as well to the LCD display screen.<br>
+			The third constraint was addressed by applying trignometry and geometry with the assumption that the canvas will be held square to the base of the robot arm.<br>
+			Below is the flow diagram that describes the overall operation of the microcontroller program:
+		</p>
+		<embed  class="robarticsImg SVG" src = "img/EOG.svg" type = "image/svg+xml">
+		<p>
+			The general idea is that when the measured potential is above or below certain thresholds, the movement of the robot arm triggers.<br>
+			Secondly, the program checks to see if there has been 3 consecutive spikes in the amplitude within 1 second. If such spikes are detected, the mode changes from X-axis movement to Y-axis movement, or vice versa.<br>
+			Finally, below is the source code for micrcontroller programming, it is written in C:
+		</p>
+		<iframe class="code" src = "includehtml/robarticsCode.html"></iframe>
+		<p>
+			You can see that vast majority of the defined functions are used convert desired location on canvas into the necessary angles of the joints, and then into motor position values predefined in lynx commands.<br>
+		</p>
+		<h2>Limitations and Flaws of the Project:</h2>
+		<p>
+			Here I will briefly discuss current flaws on our robartics system, and ways to possibly address them.
+		</p>
+		<h4>Current Flaws:</h4>
+		<ol>
+			<li>The end effector is too heavy for the arm to manage. Although it is capable of drawing, it struggles way too much.</li>
+			<li>The pen can only move 1cm per second. 
+				<p>
+					The cause of this issue is that for each loop/cycle of the program it must spend 1 second to check to see if there has been 3 blinks in a row for triggering Axis mode switch.
+				</p>
+			</li>
+			<li>
+				The baseline of the EOG signal shifts greatly at the slightest movement of the electrode, requiring constant manual control over the DC offset.<br>
+				<p>
+					The very fact that we are working with very low voltage potential valuee results in this behavior. Additionally having ADC that can only detect volatage values from 0 to 5V makes this more difficult.
+				</p>
+			</li>
+		</ol>
+		<h4>Possible solutions:</h4>
+		<ol>
+			<li>
+				For the first issue, redesign of the end effector is necessary to carve off the unnecessary mass. We originally used 1/4 inch thick acrylic sheets for its stiffness, but it may have been overcompensating. The thickness can be reduced in the future to provide lighter end effector.
+			</li>
+			<li>
+				In large pictures, this issue can be solved from moving from "linear programming" to "event based programming". However, I am not sure what extend of coding is required to accomplish event based programming in basic C (specifically basic C for microcontroller programming). Perhaps extensive use of "interrupts" will be required. Further research is necessary.
+			</li>
+			<li>
+				This final issue can be solved in following two ways:
+				<ol>
+					<li>
+						Obtain, a microcontroller with ADC port that can support greater rang of voltages.
+						<p>
+							This of course does not solve the issue at core, but simply compensates it.
+						</p>
+					</li>
+					<li>
+						Return to using the Differentiated differential amplifier.
+						<p>
+							Interesting enough this method requires using an amplifier type that we originally rejected.<br>
+							Intead of getting "raw EOG signal" straight from the user, we will simply keep track of our own "virtual raw EOG signal" within the microcontroller.<br>
+							All we have to do is simply integrate the incoming differentiated signal from the amplifier, after we have initially "zeroed" the user's eye position.<br>
+							Of course, we will still have to use non-provided EKG amplifier, due to the issue that the provided one can barely detect downward movement signal of the eye.
+						</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+		<h2>Remarks</h2>
+		<p class="lastElement">
+			This project was very interesting and challenging to tackle, allowing us to incorporate three major skill groups of engineering (Electronics, Mechanics, Programming).
+		</p>
+		
+			
+		
+	</body>
+
+</html>

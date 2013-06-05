@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<title>Pump</title>
+	<head>
+		<link rel="stylesheet" href="css/pump.css">
+		<script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+	</head>
+	<body>
+		<h1> Peristaltic Pump Project </h1>
+		<h3>Objective:</h3>
+		<p>
+			The goal of this project was to develop a low-budget peristaltic pump for the application of our choice.
+			<br>
+			We chose design and prototype a peristaltic pump for gastric feeding.
+		</p>
+		<h3>Design Contraints:</h3>
+		<p>
+			Below is the list of typical contraints for gastric feeding pump:
+		</p>
+		<ul>
+			<li>
+				Flow Rate
+				<ul>
+					<li>
+						Increment of 0.1ml/hr from 0.1 ml/hr to 10ml/hr
+					</li>
+					<li>
+						Error needs to be within 5 percent.
+					</li>
+				</ul>
+			</li>
+			<li>
+				Compatibility
+				<ul>
+					<li>
+						The tubing used must be compatible with the standardized feeding solutions.
+					</li>
+					<li>
+						Must be biocompatible with various vitamins, proteins, glucose, and lipids.
+					</li>
+					<li>
+						Feeding solutions are usually at least 70% water.
+					</li>
+				</ul>
+			</li>
+			<li>
+				Requires daily replacement of tubing by the nurses or therapists.
+			</li>
+		</ul>
+		<h3>Resource Contraints:</h3>
+		<ul>
+			<li>
+				Budget: $100
+			</li>
+			<li>
+				Material Processng tools: Laser Cutter, and Fusion Deposit Modeller.
+			</li>
+			<li>
+				Building Materials: Acrylic sheets, and Acrylonitrile butadiene styrene(ABS)
+			</li>
+		</ul>
+		<h3>Final Concept Design:</h3>
+		<p>
+			Below was the final concept design:
+		</p>
+		<img id="pump1" src="img/pumpConcept.jpg"/>
+		<p>
+			Each layer is an acrylic sheet. The thickness of the pump case, and the rotary assembly has been dimensioned to accomodate the chosen tubing and the desired flow rates.
+			<br>
+			The Tygon S-50-HL of 1/8 inch tubing was chosen for its 25-30 hour life and its slow flow rate (0.8cc per inch).
+			<br>
+			The inner circuilar plate and the associated rotary part can be easily slide out to facilitate tube replacement.
+			<br>
+		</p>
+		<p>
+			Below is a short video of prototype demonstration:
+		</p>
+
+		<video controls="controls" poster="video/pump1.jpg" width="640" height="480" title="pump1">
+			<source src="video/pump1.m4v" type="video/mp4" >
+			<source src="video/pump1.webm" type="video/webm" >
+			<source src="video/pump1.ogv" type="video/ogg" >
+			<source src="video/pump1.mp4" >
+		</video>
+		<p>
+			The motor and gearbox assembly that we used was purchased from Tamiya.
+			<br>
+			The motor had the RPM of 6500, and the gear ratio that we chose was 1300:1. Such gear ratio was needed in order to achieve minimum flow rate of 0.1 ml per hour.
+		</p>
+		<img src = "img/gearBox.jpeg" alt="Tamiya Gear Box">
+		<p>
+			Following video is a quick demonstration of the speed control by using pulse width modulation from a microcontroller.
+		</p>
+		<video controls="controls"  poster="video/pump2.jpg" width="640" height="424" title="pump2">
+			<source src="video/pump2.m4v" type="video/mp4" >
+			<source src="video/pump2.webm" type="video/webm" >
+			<source src="video/pump2.ogv" type="video/ogg" >
+			<sourcew src="video/pump1.mp4">
+		</video>
+		<p>
+			As you can see in the video, the gearbox and the rotary assembly can simply slide out of the outer casing.
+		</p>
+	</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<title>Hot Wheels</title>
+	<head>
+		<link rel="stylesheet" href="css/hotwheels.css">
+
+	</head>
+	<body>
+		<h1>Hot Wheels Project</h1>
+		<div id="video">
+			<p>
+				Below is the video presentation of our project:
+			</p>
+			<video controls="controls"  poster="video/Shakey480.jpg" width="854" height="480" title="Shakey480">
+				<source src="video/Shakey480.m4v" type="video/mp4" >
+				<source src="video/Shakey480.webm" type="video/webm" >
+				<source src="video/Shakey480.ogv" type="video/ogg" >
+				<source src="video/Shakey480.mp4" >
+			</video>
+		</div>
+		<div id="written">
+			
+
+			<h3>Introduction</h3>
+			<p>
+				Julie is a three year old preschool student who enjoys music.  She is not currently ambulatory (able to walk) or verbal, and will spend most of her day seated, either in a regular chair, or her stroller.  Her limitations have no specific medical diagnosis, but while children typically begin their first steps at 9 to 12 months, Julie has never taken steps on her own [1].  She has been able to stand, locking her legs, but not ambulate without assistance.
+				<br>
+				Julie&#39; s parents and doctors would really like for Julie to learn to walk.  There is numerous health benefits related to mobility.  Simply standing upright is beneficial for many of the body&#39; s systems that operate optimally in this position [2].
+				<br>
+				She is currently learning how to walk with help from a Rifton Pacer gait training device.  The device, shown in Figure 1, is a four wheeled mobile structure with armrests and handles that help support her body as she takes steps.  These devices have been shown to improve cognition, muscle development, and skeletal growth [3].
+				<br>
+			</p>
+			<img class="img" src="img/hotwheels/trainer.jpeg">
+			<p>
+				<b>Figure 1</b>: Gait Trainer K502 by Rifton
+			</p>
+			<p>
+				Julie does not enjoy using the trainer and will only take steps when prompted with physical instruction.  Without the ability to communicate verbally, Julie shows her displeasure with the gait trainer by grimaces and cries.  When she hears music though, she instantly cheers up; smiling, laughing, and even taking a few steps unprompted.
+				<br>
+				The company that makes the Rifton gait trainer has a number of accessories designed to help children use its device.  Accessories they call “prompts” limit the motion of the user, forcing specific leg placement.  These may help Julie place her legs correctly as she uses her trainer, but they do nothing to motivate her.
+			</p>
+
+			<h3>Project Goals</h3>
+			<p>
+				The goal is to provide an easily attachable device that will motivate the client to take steps in the gait trainer through audio and visual feedback stimuli that will trigger in response to forward movement. The device will have multiple modes of stimulation control, including a remote manual override to the automated control. The physical therapist will be able to adjust the length of stimulus duration per forward movement, the music files, the video files, the volume of the audio, and the trigger condition of the stimulus.
+			</p>
+			<h3>Design and Development</h3>
+			<p>
+				Our design can be divided to four parts: the Tablet, the Mount the Application, and the Bluetooth Remote.
+			</p>
+			<h4>Table:</h4>
+			<p>
+				The android tablet that was used for our project is the Asus Galaxy Nexus 7 (Figure 2). It has access to most recent update of the Android Operating System and is able to accommodate our application which is written using the latest Android Application Development Kit in Java. The device also has a Bluetooth capability that allows us to give the physical therapist the remote manual control over the stimuli produced by our application.
+			</p>
+			<img class="img" src="img/hotwheels/tablet.jpeg">
+			<p>
+				<b>Figure 2:</b> Asus Galaxy Nexus 7
+			</p>
+
+			<h4>Mount:</h4>
+			<p>
+				The mount assembly will interface our tablet to the Rifton Pacer (Figure 3). It is assembled out of parts from Ram Mount, and can be attached to the Pacer away from the reach of our client.
+			</p>
+			<img class="img" src="img/hotwheels/attachedtrainer.jpeg">
+			<p>
+				<b>Figure 3:</b> Tablet mounted on the pacer
+			</p>
+
+			<h4>Application:</h4>
+			<p>
+				The application is called Shakey, and its user interface provides the physical therapist the control over various settings (Figure 4).
+			</p>
+			<img class="img" src="img/hotwheels/controls.png">
+			<img class="img" src="img/hotwheels/video.png">
+			<p>
+				The screenshots of the application. Screenshot with the entire settings menu opened and stimuli not triggered (above). Screenshot when the stimuli are triggered (below).
+			</p>
+			<ul>
+				<li>
+					<b>Music Button:</b> When pressed, the application will switch over to the default music player of the tablet, from which the songs can be chosen.
+				</li>
+				<li>
+					<b>Volume Slider:</b> Moving this slider will adjust the output volume in respect to the maximum possible output.
+				</li>
+				<li>
+					<b>Manual/Auto radio buttons:</b> Switches between manual or automatic modes. In automatic mode, the stimuli will be triggered by the movement of the tablet.
+				</li>
+				<li>
+					<b>Play Button:</b> This button will turn on the stimuli for indefinite amount of time while in the Manual Mode.
+				</li>
+				<li>
+					<b>Pause Button:</b> This button will stop the stimulus instantly in both Automatic and Manual modes.
+				</li>
+				<li>
+					<b>Menu Button: </b>This button will bring up additional settings: Axis radio buttons, Minimum, and Time(s).
+					<ul>
+						<li>
+							<b>Axis Radio Buttons:</b> chooses which axis of motion will be detected.
+						</li>
+						<li>
+							<b>Minimum:</b> allows user to define the threshold for minimum change in the acceleration value for the stimuli trigger.
+						</li>
+						<li>
+							<b>Time:</b> Allows uer to define the length of time in which the stimuli will last per trigger.
+						</li>
+						<li>
+							<b>Enter:</b> enacts the chanesin teh above three settings.
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h4>Bluetooth Remote:</h4>
+			<p>
+				This remote from Satechi will be carried by the physical therapist. It will allow her to switch between automatic and manual modes, and start or end the stimuli while aiding the client, away from the tablet (Figure 5).
+			</p>
+			<img class="img" id="bt" src="img/hotwheels/remote.png">
+			<p>
+				Figure 5: Bluetooth
+			</p>
+			<ul>
+				<li>
+					+ button will raise the audio volume output
+				</li>
+				<li>
+					- button will lower the audio volume output
+				</li>
+				<li>
+					|&lt;&lt; button will switch the appliation to manual mode.
+				</li>
+				<li>
+					&gt;&gt;| button will switch the application to the automatic mode.
+				</li>
+				<li>
+					Play/Pause button will stop the stimuli in both modes. It will start the stimuli in manual mode.
+				</li>
+			</ul>
+			<h3>Evaluation</h3>
+			<p>
+				The device has been evaluated using the verification and validation process. The verification plan for each performance criteria has been tested within the lab by our design team. The validation plan for each performance criteria has been tested with the client and the physical therapist. The detailed test criteria, procedure and the results can be found in Appendix C. The physical therapist has affirmed that our device will greatly aid the client in her gait training sessions (Appendix A).
+			</p>
+			<h3>Discussion and Conclusion</h3>
+			<p>
+				Our project components come together to provide adequate positive audio and visual feedback to the client that motivate her to continue in gait training therapy sessions without complaints of displeasure. During the final client test, the client did not grimace or vocally expressed her displeasure during the whole gait training session.
+			</p>
+
+			<h3>References</h3>
+			<p>
+				[1] Babycenter, 2013, accessed 27 January 2013, &lt;http://www.babycenter.com/0_developmental-milestone-walking_6507.bc&gt;.
+				<br>
+				[2] Bundonis, Joanne, “Benefits of Early Mobility with an Emphasis on Gait Training,” 2009, accessed 27 January 2013, &lt;http://www.rifton.com/adaptive-mobility-blog/benefits-of-early-mobility-with-an-emphasis-on-gait-training/&gt;.
+				<br>
+				[3] Rifton Pacer Gait Trainers, 2013, accessed 27 January 2013, &lt;http://www.rifton.com/products/mobility/pacergaittrainers/&gt;
+				<br>
+
+			</p>
+		</div>
+	</body>
+
+</html>
