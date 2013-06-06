@@ -16,7 +16,8 @@ $(document).ready(function() {
 	$("#Robartics").click({page: "includehtml/robartics.html"}, addContent);
 	$("#HW").click({page: "includehtml/hotwheels.html"}, addContent);
 	
-	$("#contentBox").resize(function(){
+	$(window).resize(function(){
+		
 		var contentBox =$("contentBox");
 		if($("body").width()*0.2 > 200){
 			contentBox.css("left", "200px");
