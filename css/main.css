@@ -189,7 +189,9 @@ nav {
 	width: 200px;
 }
 
-
+.menu-item:hover ul{
+	height: 930px;
+}
 
 .menu-teim:hover #resumeList{
 	height: 62px;
