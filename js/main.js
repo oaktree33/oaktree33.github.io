@@ -17,8 +17,7 @@ $(document).ready(function() {
 	$("#HW").click({page: "includehtml/hotwheels.html"}, addContent);
 	
 	$(window).resize(function(){
-		alert("resize called");
-		/*
+		
 		var contentBox =$("contentBox");
 		if($("body").width()*0.2 > 200){
 			contentBox.css("left", "200px");
@@ -26,6 +25,6 @@ $(document).ready(function() {
 		else{
 			contentBox.css("left", "20%");
 		}
-		*/
+		
 	});
 });
