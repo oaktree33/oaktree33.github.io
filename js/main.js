@@ -22,6 +22,9 @@ $(document).ready(function() {
 		if($(window).width()*0.2 > 200){
 			$("#contentBox").css("left", "200px");
 		}
+		else if($(window).width()*0.2<100){
+			$("#contentBox").css("left", "100px");
+		}
 		else{
 			$("#contentBox").css("left", "20%");
 		}
