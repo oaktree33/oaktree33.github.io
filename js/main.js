@@ -21,6 +21,7 @@ $(document).ready(function() {
 		
 		if($("body").width()*0.2 > 200){
 			$("#contentBox").css("left", "200px");
+			alert("triggered");
 		}
 		else{
 			$("#contentBox").css("left", "20%");
