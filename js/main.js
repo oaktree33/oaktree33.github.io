@@ -18,14 +18,13 @@ $(document).ready(function() {
 	
 	$(window).resize(function(){
 		
-		alert($("body").width()*0.2);
-		/*var contentBox =$("contentBox");
+		
 		if($("body").width()*0.2 > 200){
-			contentBox.css("left", "200px");
+			$("#contentBox").css("left", "200px");
 		}
 		else{
-			contentBox.css("left", "20%");
-		}*/
+			$("#contentBox").css("left", "20%");
+		}
 		
 	});
 });
