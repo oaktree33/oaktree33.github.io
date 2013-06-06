@@ -18,7 +18,7 @@ $(document).ready(function() {
 	
 	$(window).resize(function(){
 		
-		alert($("body").width()*0.2);
+		alert(window.width()*0.2);
 		if($("body").width()*0.2 > 200){
 			$("#contentBox").css("left", "200px");
 			alert("triggered");
