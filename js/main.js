@@ -15,6 +15,7 @@ $(document).ready(function() {
 	$("#PP").click({page: "includehtml/pump.html"}, addContent);
 	$("#Robartics").click({page: "includehtml/robartics.html"}, addContent);
 	$("#HW").click({page: "includehtml/hotwheels.html"}, addContent);
+	addContent({page:"includehtml/home.html"});
 	
 	$(window).resize(function(){
 		
