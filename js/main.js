@@ -28,7 +28,7 @@ $(document).ready(function() {
 		}
 		
 	});
-	$("#contentBox").load(event.data.page, function(response, status, xhr) {
+	$("#contentBox").load("includehtml/home.html", function(response, status, xhr) {
 			if (status == "error") {
 				alert("Error: " + xhr.status + " " + xhr.statusText);
 			}
