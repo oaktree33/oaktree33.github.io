@@ -95,7 +95,7 @@
 		</p>
 		<iframe class="code" src = "includehtml/robarticsCode.html"></iframe>
 		<p>
-			You can see that vast majority of the defined functions are used convert desired location on canvas into the necessary angles of the joints, and then into motor position values predefined in lynx commands.<br>
+			You can see that vast majority of the defined functions are used to convert desired location on canvas into the necessary angles of the joints, and then into motor position values predefined in lynx commands.<br>
 		</p>
 		<h2>Limitations and Flaws of the Project:</h2>
 		<p>
@@ -112,7 +112,7 @@
 			<li>
 				The baseline of the EOG signal shifts greatly at the slightest movement of the electrode, requiring constant manual control over the DC offset.<br>
 				<p>
-					The very fact that we are working with very low voltage potential valuee results in this behavior. Additionally having ADC that can only detect volatage values from 0 to 5V makes this more difficult.
+					The very fact that we are working with very low voltage potential value results in this behavior. Additionally having ADC that can only detect volatage values from 0 to 5V makes this more difficult.
 				</p>
 			</li>
 		</ol>
@@ -128,7 +128,7 @@
 				This final issue can be solved in following two ways:
 				<ol>
 					<li>
-						Obtain, a microcontroller with ADC port that can support greater rang of voltages.
+						Obtain, a microcontroller with ADC port that can support greater range of voltages.
 						<p>
 							This of course does not solve the issue at core, but simply compensates it.
 						</p>
@@ -139,7 +139,7 @@
 							Interesting enough this method requires using an amplifier type that we originally rejected.<br>
 							Intead of getting "raw EOG signal" straight from the user, we will simply keep track of our own "virtual raw EOG signal" within the microcontroller.<br>
 							All we have to do is simply integrate the incoming differentiated signal from the amplifier, after we have initially "zeroed" the user's eye position.<br>
-							Of course, we will still have to use non-provided EKG amplifier, due to the issue that the provided one can barely detect downward movement signal of the eye.
+							Of course, we will still have to use non-provided EKG amplifier, since it can barely detect downward movement signal of the eye.
 						</p>
 					</li>
 				</ol>
@@ -149,9 +149,7 @@
 		<p class="lastElement">
 			This project was very interesting and challenging to tackle, allowing us to incorporate three major skill groups of engineering (Electronics, Mechanics, Programming).
 		</p>
-		
-			
-		
+	
 	</body>
 
 </html>
