@@ -5,7 +5,7 @@ $(document).ready(function() {
 			if (status == "error") {
 				alert("Error: " + xhr.status + " " + xhr.statusText);
 			}
-		})
+		});
 	};
 
 	$("#View").click(function() {
@@ -15,11 +15,8 @@ $(document).ready(function() {
 	$("#PP").click({page: "includehtml/pump.html"}, addContent);
 	$("#Robartics").click({page: "includehtml/robartics.html"}, addContent);
 	$("#HW").click({page: "includehtml/hotwheels.html"}, addContent);
-	addContent({page:"includehtml/home.html"});
 	
 	$(window).resize(function(){
-		
-		
 		if($(window).width()*0.2 > 200){
 			$("#contentBox").css("left", "200px");
 		}
@@ -30,5 +27,10 @@ $(document).ready(function() {
 			$("#contentBox").css("left", "20%");
 		}
 		
+	});
+	$("#contentBox").load(event.data.page, function(response, status, xhr) {
+			if (status == "error") {
+				alert("Error: " + xhr.status + " " + xhr.statusText);
+			}
 	});
 });
