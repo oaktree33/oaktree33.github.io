@@ -222,7 +222,9 @@ nav {
 
 body{
 	max-width:980px;
-	background: #f1e7d0;
+	background:#000000;
+	color:#0CEC00;
+	/*background: #f1e7d0;*/
 }
 
 
