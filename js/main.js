@@ -31,6 +31,7 @@ $(document).ready(function() {
 	$("#HW").click({page: "includehtml/hotwheels.html"}, addContent);
 	$("#Home").click({page: "includehtml/home.html"}, addContent);
 	$("#contact").click({page: "includehtml/contact.html"}, addContent);
+	$("#SW").click({page: "includehtml/sw.html"}, addContent);
 	
 	//Setting Minium and maximum position of the contentbox
 	$(window).resize(resizeContentBox);
