@@ -20,7 +20,43 @@
 			</video>
 		</p>
 		
-		
+		<p>
+			As I mentioned earlier, the lift force values that I obtained was unacceptable as it would not lift the wing's own weight. So the next reasonable thing I tried was to simply increase the amount of resolution from the value of "4" to "8". These numbers give control over the resolution of the "initial mesh" that is automatically calculated by the simulator. <br>
+			These "initial meshes" divide the computational volume by little voxels. I believe these voxels serve as "points" that are used for the calculation. And I have heard that increasing the "reslution" setting by 1 value is equivalent to increasing the reslution by factor of 8. My guess is that it increases the number of ticks for each dimension by factor of 2 and thus increasing the total number of voxels by the factor of 8. <br>	
+		</p>
+		<p>
+			Unfortunately, I did not get to see the result of this increase in resolution. The calculation was taking a very heavy toll on my computer, especially to my RAM. My system is a quad-core i7-3770k with 16 GB of ram. However, while running this calculation, the Solidworks took up all of my RAM and my system had to constantly transfer the data back and forth between my SSD and the RAM. Even after I let the calculation run for 5+ hours, it did not finish.
+		</p>
+		<p>
+			On my third try, I found the feature in the flow simulation called "Local Initial Mesh". Upon activiating this feature, it prompts for choosing various faces, surfaces, and vertices to which the local initial mesh will be applied to. On the second tab, you can choose to increase or decrease the resolution for the selected area. I set this value to 5, increasing the voxel concentration in this area by factor of 8, (in assumption). <br>
+			The calculation this time took few hours, which was significantly longer than the first try, but it did give me a higher lift force value.  <br>
+			<img class="wingImg" src="img/sw/result2"/>
+			As you can see in the image above, the resulting lift force was .157 Newtons, which converts roughly to about 16 gram force. Unfortunately, this is still insufficient amount of lift force.<br>
+			The visualization of the flow trajectories also differed greatly, below video shows the visualization in three different views.
+			<video controls="controls"  poster="video/sw/joined.jpg" width="854" height="480" title="Shakey480">
+				<source src="video/sw/joined.m4v" type="video/mp4" >
+				<source src="video/sw/joined.webm" type="video/webm" >
+				<source src="video/sw/joined.ogv" type="video/ogg" >
+				<source src="video/sw/joined.mp4" >
+			</video>
+		</p>
+		<p>
+			Next, I tried manually configuring the initial meshes. It seems, by default the initial mesh is set to be about 100 x 100 x 50, making total of 500,000 voxels. The configuration UI is shown below.<br>
+			<img class="wingImg" src="img/sw/manual mesh settings.jpg"/><br>
+			The setting values displayed on the image was my final custom settings. Initially, I set the values as: Number of cell per X = 300, Number of cells per Y = 150, Number of cells per Z = 300. Additionally, I concentrated the voxels of the initial mesh to near the wing model itself, by adjusting the ratio values to the each X, Y, Z planes. These planes divide each dimension of the computational domain, and allow the user to change the concentration of "ticks" between the planes. <br>
+			Unfortunately, when I ran the calculation using this initial mesh, it ended up running for 6+ hours without finishing, as due to the aforementioned issues. <br>
+			On my next trial, I reduced the number of cells to 200 x 100 x 200. I let the calcualtion run over-night this time. But to my dismay, the calculation ran for 600+ iteration, but the value for lift force never even converged.
+		</p>
+		<p>
+			I assumed that the cause may have been due to poorly set ratios, that cause sudden decrease of the voxel concentration outside of the wing model. Thus, I changed my settings as the previous image shows, and ran the calcualation.<br>
+			Unfortunately, the lift-force converged into meager value of 0.05413 Newtons, which is about 5.5 gram force. <br>
+			<img class="wingImg" src="img/sw/result3.jpg"/> <br>
+			The calculation took about an hour and seven minutes. Below images display the initial mesh in three different views.
+			<img clas="wingImg" src="img/sw/mesh_right.jpg"/><br>
+			<img clas="wingImg" src="img/sw/mesh_front.jpg"/><br>
+			<img clas="wingImg" src="img/sw/mesh_top.jpg"/><br>
+		</p>
+
 	</body>
 </html>
 	
