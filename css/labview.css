@@ -10,3 +10,12 @@
 .comparison{
 	border: 1px solid black;
 }
+
+.comparison td{
+	border: 1px solid black;
+}
+
+.comparison th{
+	border: 3px solid black;
+	background-color:gray; 
+}
