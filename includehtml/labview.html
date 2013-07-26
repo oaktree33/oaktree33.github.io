@@ -37,7 +37,34 @@
 			There is a graphical element within LabView called the "formula node", placing this element onto the block diagram will take a form of a text-box that can be connected to input and output elements.<br>
 			Below is the image of the cat jump program implemented with the formula node:<br>
 			<img class = "lvImg" src="img/lv/formulanode.jpg"/><br>
-			The text code allowed for the formula node is reminiscent of a very simplified version of C with built in arithmetic functions. The list of available functions are detailed in this <a href ="http://zone.ni.com/reference/en-XX/help/371361D-01/lvhowto/formula_node_and_express/">site</a>. 
+			The text code allowed for the formula node is reminiscent of a very simplified version of C with built in arithmetic functions. The list of available functions are detailed in this <a href ="http://zone.ni.com/reference/en-XX/help/371361D-01/lvhowto/formula_node_and_express/">site</a>.<br> 
+		</p>
+		<h6>Mathscript</h6>
+		<p>
+			The Mathscript was previously included with the standard LabView purchase, but since LabView 2011, it needs to be purchased separately. I could not get the evaluation copy to work for me. The general principle is same as the mathscript, but with greater funtionality and designed specific for LabView. <br>
+			An example of mathscript node is shown below: <br>
+			<img src="img/lv/mathscript.jpg"/><br> 
+			The mathscript module can be downloaded from the <a href="http://www.ni.com/labview/mathscript/">National Instruments site</a>.<br>
+			More information and tutorials can be found in the following links:<br>
+			<a href="http://zone.ni.com/devzone/cda/tut/p/id/6206#toc2">http://zone.ni.com/devzone/cda/tut/p/id/6206#toc2</a><br>
+			<a href="http://zone.ni.com/devzone/cda/tut/p/id/3256#toc1">http://zone.ni.com/devzone/cda/tut/p/id/3256#toc1</a>
+
+		</p>
+		<h6>Matlab Node</h6>
+		<p>
+			There is a programming language platform called Matlab that is frequently used for complex calculations and mathematical analysis. If you have access to Matlab, then you can use the matlab node in labview to do computations through matlab. <br>
+			Below is the image of the same cat jump program implemented using the matlab script node. <br>
+			<img src="img/lv/matlab.jpg"/><br>
+			As you can see, the setup is very similar to mathscript and the formula node. The matlab node will send the typed script to the matlab server running locally on the machine, and then the server will run the script and return the result to the Labview.
+		</p>
+		<h6>DLL (C/C++)</h6>
+		<p>
+			LabView has an element called the "call library function node". This node allows you to use a function/method that is defined in a DLL file written using C or C++. Each node can be used for one function within the DLL. <br>
+			Below is the cat jump program implemented using the call library function node:<br>
+			<img src = "img/lv/dllblock.jpg"/><br>
+			And below is the source of the DLL that I wrote:<br>
+			<iframe class="code" src = "includehtml/catjumpCode.html"></iframe><br>
+			
 		</p>
 	</body>
 	
