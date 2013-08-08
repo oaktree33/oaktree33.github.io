@@ -225,6 +225,12 @@ body{
 	background: #f1e7d0;
 }
 
+/*sub item list font*/
+.sublist{
+	color:gray;
+	margin-left:5%;
+}
+
 
 
 
