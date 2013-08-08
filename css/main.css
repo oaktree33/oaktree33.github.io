@@ -196,6 +196,10 @@ nav {
 .menu-item:hover #resumeList{
 	height: 62px;
 }
+
+.menu-item:hover #practiceList{
+	height:124px;
+}
  
 /*li Styles*/
 .menu-item li {
@@ -205,6 +209,13 @@ nav {
 .menu-item li:hover {
 	background: #eee;
 }
+
+/*sub item list font*/
+.sublist{
+	color:gray;
+	margin-left:5%;
+}
+
 
 #contentBox{
 	position:absolute;
@@ -225,11 +236,7 @@ body{
 	background: #f1e7d0;
 }
 
-/*sub item list font*/
-.sublist{
-	color:gray;
-	margin-left:5%;
-}
+
 
 
 
