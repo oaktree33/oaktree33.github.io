@@ -17,5 +17,6 @@
 
 .comparison th{
 	border: 3px solid black;
+	color: white;
 	background-color: #0CEC00; 
 }
