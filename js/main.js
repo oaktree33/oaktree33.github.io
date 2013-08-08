@@ -31,7 +31,8 @@ $(document).ready(function() {
 	$("#HW").click({page: "includehtml/hotwheels.html"}, addContent);
 	$("#Home").click({page: "includehtml/home.html"}, addContent);
 	$("#contact").click({page: "includehtml/contact.html"}, addContent);
-	$("#SW").click({page: "includehtml/sw.html"}, addContent);
+	$("#fsWing").click({page: "includehtml/sw.html"}, addContent);
+	$("fsRotor").click({page: "includehtml/rotor.html"}, addContent);
 	$("#LV").click({page: "includehtml/labview.html"}, addContent);
 	
 	//Setting Minium and maximum position of the contentbox

@@ -198,7 +198,7 @@ nav {
 }
 
 .menu-item:hover #practiceList{
-	height:200px;
+	height:124px;
 }
  
 /*li Styles*/
@@ -209,14 +209,21 @@ nav {
 .menu-item li:hover {
 	background: #eee;
 }
+.sublist li :hover{
+	background: #eee;
+}
 
 /*sub item list font*/
 .sublist{
 	color:#aaa;
-	margin-left:20%;
-	margin-bottom:0;
+	margin-bottom:-31px;
+	margin-left:10%;
+	padding-bottom:0px;
+	border-bottom:0px;
 }
-
+.sublist li a{
+	font-size:small;
+}
 
 #contentBox{
 	position:absolute;
