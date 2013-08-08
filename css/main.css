@@ -198,7 +198,7 @@ nav {
 }
 
 .menu-item:hover #practiceList{
-	height:124px;
+	height:200px;
 }
  
 /*li Styles*/
@@ -212,8 +212,9 @@ nav {
 
 /*sub item list font*/
 .sublist{
-	color:gray;
+	color:#aaa;
 	margin-left:20%;
+	margin-bottom:0;
 }
 
 
