@@ -17,5 +17,28 @@
 		<img class="rotorImg" src="img/SW/rotor/rotorISO.jpg">
 		<img class="rotorImg" src="img/SW/rotor/rotorSide.jpg">
 		<img class="rotorImg" src="img/SW/rotor/rotorTOP.jpg">
+		<p>
+			As mentioned above, after the initial set up I must indicate a region in which the medium will rotate around the object. This is done by encasing the object in question with a cylinder.<br>
+			I drew a cylinder around the rotor and made it transparent as shown below.<br>
+		</p>
+		<img class="rotorImg" src="img/SW/rotor/rotor rotating region.jpg">
+		<p>
+			After inserting the region into the flowsim tree, and setting the radians per second to 90 (about 860 rpm), I defined the goals to be the Y direction force and the torque around the Y-axis.<br>
+			Below is the video of the resulting flow trajectories:<br>
+		</p>
+		<video controls="controls"  poster="video/sw/rotorCombined.jpg" width="640" height="480" title="Rotor Flow">
+				<source src="video/sw/rotor/rotorCombined.mp4" type="video/mp4" >
+				<source src="video/sw/rotor/rotorCombined.webm" type="video/webm" >
+				<source src="video/sw/rotor/rotorCombined.ogv" type="video/ogg" >
+				<source src="video/sw/rotor/rotorCombined.mp4" >
+		</video>
+		<p>
+			The Y force converged to be about 153 Newtons. This force would be used to push the boat for example.<br>
+			The Y axis torque value converged to be about 7.25 N*m. This would be the amount of load that the motor spinning the rotor will have to over come.<br>
+			If my goal was to design the best rotor, I would tweak the design of the rotor until I get the lowest Y force to Y axis torque ratio.<br>
+		</p>
+		<p>
+			As far as testing this feature goes, it is a success. The Solidworks flowsimulatior seems to be useful in rotor design. Of course I can't be sure of its accuracy unless I have some proven standards to compare the result to.
+		</p>
 	</body>
 </html>
