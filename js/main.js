@@ -34,6 +34,7 @@ $(document).ready(function() {
 	$("#fsWing").click({page: "includehtml/sw.html"}, addContent);
 	$("#fsRotor").click({page: "includehtml/rotor.html"}, addContent);
 	$("#LV").click({page: "includehtml/labview.html"}, addContent);
+	$("#mold").click({page: "includehtml/mold.html"}, addContent);
 	
 	//Setting Minium and maximum position of the contentbox
 	$(window).resize(resizeContentBox);

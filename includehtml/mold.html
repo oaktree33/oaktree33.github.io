@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>mold</title>
+		<meta name="description" content="" />
+		<meta name="author" content="oaktr_000" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		<link rel="stylesheet" href="css/mold.css">
+	</head>
+
+		<body>
+		<h1>Graphite Mold for Casting Brass Pipe Fitting Casting</h1>
+		<h3>Objective:</h3>
+		<p>
+			The goal of this small project was to design and machine a graphite mold for casting brass into a pipe fitting. The specific fitting type is a male to barbed fitting.<br>
+			<img class="moldImg" src="img/mold/maletobarbedfitting.jpg">
+		</p>
+		<h3>Limitations:</h3>
+		<p>There were few limitations due to the available resources and tools.</p>
+		<ul>
+			<li>Graphite cylinder Size: The mold had to be cut from a graphite cylinder of diameter 4.5 inches and height of 6 inches.</li>
+			<li>The mold had to be machinable only using lathe and hand tools.</li>
+			<li>The mold had to be reusable.</li>
+		</ul>
+		<h3>The Fitting</h3>
+		<p>
+			The first step I took was to create a solidwork model of the pipe fitting that I intended to make a mold for.<br>
+			<img class="moldImg" src="img/mold/SW_pipe_fitting.JPG"><br>
+			The template model for the pipe fitting did not have to be this detailed, but placed the details for practice.<br>
+		</p>
+		<p>
+			Next step was to simplify the template model so that it is castable.<br>
+			<ol>
+				<li>The threads and the barbs were filled more material to create a smooth surface.</li>
+				<li>The scale tool in the SolidWorks Mold Tools set, to compensate the volume shrinkage of the typical brass metal during solidification and cooling.</li>
+				<li>The Draft Analysis and draft tools were used to give a 3 degree draft to the model in the directions where the fitting would be pulled away from mold.</li>
+				<li>The Parting Line tool was used to indicate at which plane, the mold will be separated in two parts</li>
+				<li>The Shut-Off Surfaces tool was used to specify which "surrounded volume" would be part of which mold-part</li>
+				<li>The parting Surfaces tool was used to clearly indicate the separation point between the two mold parts</li>
+				<li>Finally, the Tooliing Split tool was used to create the two parts of the mold.</li>
+			</ol>
+			
+			I repeated the above steps two model 4 different designs for the mold
+			
+		</p>
+		<h4>Design 1</h4>
+		<img class="moldImg" src="img/mold/design1.jpg">
+		<h5>Bottom</h5>
+		<img class="moldImg" src="img/mold/design1_bottom.jpg">
+		<h5>Top</h5>
+		<img class="moldImg" src="img/mold/design1_top.jpg">
+		<h5>Resulting Cast</h5>
+		<img class="moldImg" src="img/mold/design1_cast.jpg">
+		<ul>
+			<h5>Pros:</h5>
+			<li>Requires only 1 graphite block to build</li>
+			<li>Easiest to fabricate</li>
+			<li>Top part is optional</li>
+		</ul>
+		<ul>
+			<h5>Cons:</h5>
+			<li>The coreneed to be drilled out, resulting in a large brass waste.</li>
+			<li>The wrench grip area needs to be post machined</li>
+		</ul>
+		
+		<h4>Design 2</h4>
+		<img class="moldImg" src="img/mold/design2.jpg">
+		<h5>Bottom</h5>
+		<img class="moldImg" src="img/mold/design2_bottom.jpg">
+		<h5>Top</h5>
+		<img class="moldImg" src="img/mold/design2_top.jpg">
+		<h5>Resulting Cast</h5>
+		<img class="moldImg" src="img/mold/design2_cast.jpg">
+		
+		<ul>
+			<h5>Pros:</h5>
+			<li>Easy to fabricate</li>
+			<li>Less wasted brass</li>
+		</ul>
+		<ul>
+			<h5>Cons:</h5>
+			<li>Requires two graphite cylinders to fabricate due to the extending cone of the top mold part</li>
+			<li>The wrench grip area needs to be post machined</li>
+		</ul>
+		
+		<h4>Design 3</h4>
+		<img class="moldImg" src="img/mold/design3.jpg">
+		<h5>Bottom</h5>
+		<img class="moldImg" src="img/mold/design3_bottom.jpg">
+		<h5>Top</h5>
+		<img class="moldImg" src="img/mold/design3_top.jpg">
+		<h5>Resulting Cast</h5>
+		<img class="moldImg" src="img/mold/design3_cast.jpg">
+		
+		<ul>
+			<h5>Pros:</h5>
+			<li>Requires only 1 graphite block</li>
+			<li>Wrench grip area is preformed</li>
+			<li>Only trimming and threading required</li>
+		</ul>
+		<ul>
+			<h5>Cons:</h5>
+			<li>Hardest to fabricate. Requires pin-point cutting tool and inner tapering in forward and reverse directions.</li>
+			<li>The molten brass entrance paths are only 0.17 inches wide in diameter</li>
+			<li>The wrench grip area may not actually be filled depending on the fluidity of the molten brass.</li>
+		</ul>
+		
+		<h4>Design 4</h4>
+		<img class="moldImg" src="img/mold/design4.jpg">
+		<h5>Resulting Cast</h5>
+		<img class="moldImg" src="img/mold/design4_cast.jpg">
+		
+		<ul>
+			<h5>Pros:</h5>
+			<li>Requires only 1 graphite block</li>
+			<li>Has only 1 part.</li>
+			<li>Less brass is wasted due preformed core</li>
+			<li>Easiest to fabricate</li>
+		</ul>
+		<ul>
+			<h5>Cons:</h5>
+			<li>Requires the most post machining work</li>
+		</ul>
+		
+		<p>In the end, the design 4 was chosen due to its simple design and fabrication method.</p>
+		
+		<h3>Fabricating the Mold</h3>
+		<p>
+			The main tool used to fabricate the mold was the lathe. We made our custom cutting tool out of high speed steel. This cutting tool had length equal to the pipe fitting that we desired to cast, and had double cutting edges (each tapered at approximately 3 degrees).<br>
+			This allowed us to fabricate both inner and outer tapering surfaces in a single lathe process.<br>
+			We were successful in fabricating the mold giving slighly more leeway in the outer and inner diameter of the pipe fitting.<br>
+		</p>
+		<h3>Casting the brass</h3>
+		<p>
+			We used an electric meltring furnace to heat the scrap brass and copper pennies into molten brass. The Copper zinc alloy melted at about 1150 degrees celsius. The molten brass then poured into the graphite mold that was at room temperature.<br>
+		</p>
+		<h4>Initial Problems:</h4>
+		<p>
+			Unfortunately, there were few unforseen problems:
+			<ul>
+				<li>The 3 degree taper in the inner cone of the mold was insufficient for the cast to be removed from the mold. <br>
+					As the molten brass shrunk during solidification and cooling, the cast created a tight grip on to the cone shaped extrusion of the mold. This grip was so tight that the cast could not be removed without breaking the cone-extrusion itself.
+				</li>
+				<li>The surface of the cast was uneven, and a lot of bumps and dips were present. <br>
+					The mold's inner surface was not smooth as desired due to the undesired flexing of our cutting tool.
+				</li>
+			</ul>
+		</p>
+		<h4>Solutions to Initial Problems</h4>
+		<p>
+			Here is how we addresseed the initial problems that we encountered:<br>
+			The first problem was addressed by removing the cone-shaped extrusion and replacing with a destructable "cone core" made out of resusable "green sand" or casting sand.<br>
+			We cut a circular slot at the bottom of the mold where the cone-shaped casting sand structure can be fitted for the casting.<br>
+			<br>
+			The second problem was addressed by using a standard metal cutting tool, and the taper attachment on our lathe to refinish the inner surfaces of the mold.
+		</p>
+		<h3>Post machining:</h3>
+		<p>
+			The resulting brass cast was then machined with the lathe to smooth out the surfaces and to create the threading and the barbs. Below is an image of the resulting product.<br>
+		</p>
+	</body>
+</html>
